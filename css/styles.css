@@ -441,7 +441,7 @@ footer - start */
     margin-right: 80px;
 }
 .footer-social-subtitle,
-.footer-subscribe-input-label {
+.footer-subscribe-input-title {
     color: #FFFFFF;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -484,15 +484,13 @@ footer - start */
     flex-direction: column;
 }
 
-.footer-subscribe {
+.footer-subscribe-input-form {
     display: flex;
     gap: 24px;
-    align-items: flex-end;
 }
 
 .footer-subscribe-btn {
     display: flex;
-    gap: 16px;
     justify-content: center;
     align-items: center;
     fill: #FFFFFF;
@@ -504,24 +502,30 @@ footer - start */
     min-height: 40px;
 }
 
+.footer-subscribe-btn-icon {
+    margin-left: 16px;
+}
+
 .footer-subscribe-input-email {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     border: 1px solid #FFFFFF;
     border-radius: 4px;
     width: 264px;
     height: 40px;
-    padding: 8px 16px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.footer-subscribe-input-email,
-.footer-subscribe-input-email::placeholder {
     color: #FFFFFF;
     font-weight: 400;
     font-size: 12px;
     line-height: 2;
     letter-spacing: 0.04em;
+    
+    padding: 8px 16px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-subscribe-input-email::placeholder {
+    color: #FFFFFF;
 }
 
 .footer-subscribe-input-email:hover,
