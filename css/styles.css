@@ -631,8 +631,7 @@ footer - start */
 }
 
 .modal-privacy-label {
-    display: inline-flex;
-    gap: 8px;
+    /* gap: 8px; */
     font-weight: 400;
     font-size: 12px;
     line-height: 1.17;
@@ -748,7 +747,6 @@ footer - start */
     height: 16px;
     border-radius: 2px;
     border: 1px solid rgba(46, 47, 66, 0.4);
-    display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
