@@ -132,7 +132,7 @@ header - start */
     letter-spacing: 0.02em;
     color: #2E2F42;
     padding: 24px 0;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-menu .link-active {
@@ -204,6 +204,7 @@ header - start */
 }
 
 .button {
+    padding: 0;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -224,8 +225,6 @@ header - start */
 
 .button {
     display: block;
-    min-width: 169px;
-    min-height: 56px;
     border: none;
     border-radius: 4px;
     background-color: #4D5AE5;
@@ -236,6 +235,12 @@ header - start */
     letter-spacing: 0.04em;
     line-height: 1.5;
     cursor: pointer;
+}
+.hero .button,
+.modal .button {
+    min-width: 169px;
+    min-height: 56px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 /* ---------------------------------------
@@ -256,11 +261,6 @@ header - start */
     border: 1px solid #8E8F99;
     margin-bottom: 8px;
 }
-
-/* .features-list-item-icon {
-    padding: 24px 100px;
-    width: 264px;
-} */
 
 .visually-hidden {
     position: absolute;
@@ -437,7 +437,11 @@ footer - start */
     max-width: 264px;
 }
 
-.footer-social-subtitle {
+.footer-social {
+    margin-right: 80px;
+}
+.footer-social-subtitle,
+.footer-subscribe-input-label {
     color: #FFFFFF;
     line-height: 1.5;
     letter-spacing: 0.02em;
@@ -473,4 +477,293 @@ footer - start */
 
 .footer-social-icons-link-svg {
     fill: #f4f4fd;
+}
+
+.footer-subscribe-input-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-subscribe {
+    display: flex;
+    gap: 24px;
+    align-items: flex-end;
+}
+
+.footer-subscribe-btn {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    fill: #FFFFFF;
+    max-height: 40px;
+}
+
+.footer .button {
+    min-width: 165px;
+    min-height: 40px;
+}
+
+.footer-subscribe-input-email {
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    width: 264px;
+    height: 40px;
+    padding: 8px 16px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-subscribe-input-email,
+.footer-subscribe-input-email::placeholder {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+}
+
+.footer-subscribe-input-email:hover,
+.footer-subscribe-input-email:focus {
+    border-color: #4D5AE5;
+    outline: none;
+}
+
+/* ---------------------------------------
+Модальное окно - start */
+
+.backdrop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal {
+    position: absolute;
+    padding: 24px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    min-height: 584px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    background-color: #fcfcfc;
+    border-radius: 4px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop:not(.is-open) .modal {
+    transform: translate(-50%, -50%) scaleX(1.5);
+}
+
+.modal-close-btn {
+    position: absolute;
+    right: 24px;
+    border-radius: 50%;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: block;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close-btn-icon {
+    fill: #2e2f42;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: #404bbf;
+    border: none;
+}
+
+.modal-close-btn:hover .modal-close-btn-icon,
+.modal-close-btn:focus .modal-close-btn-icon {
+    fill: #FFFFFF;
+}
+
+.modal-title {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #2e2f42;
+    margin-top: 48px;
+    margin-bottom: 16px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content-all-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.modal-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    margin-bottom: 4px;
+}
+
+.modal-input-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-input-content
+.modal-input {
+    position: relative;
+    width: 360px;
+}
+
+.modal-input-field {
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    outline: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    padding: 8px 16px 8px 38px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
+    color: #434455;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input-icon {
+    position: absolute;
+    width: 18px;
+    height: 24px;
+    left: 16px;
+    top: 8px;
+    fill: #2e2f42;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input-field:hover,
+.modal-input-field:focus-visible,
+.modal-textarea-field:hover,
+.modal-textarea-field:focus-visible {
+    border-color: #4d5ae5;
+    outline: none;
+}
+
+.modal-input:hover .modal-input-icon,
+.modal-input:focus-visible .modal-input-icon,
+.modal-input:active .modal-input-field, 
+.modal-input:active .modal-input-field,
+.modal-input-field:focus + .modal-input-icon,
+.modal-input:focus-within .modal-input-icon {
+    fill: #4d5ae5;
+}
+
+.modal-textarea-field {
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    outline: none;
+    border-radius: 4px;
+    width: 100%;
+    height: 120px;
+    resize: none;
+    padding: 8px 16px 8px 16px;
+
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em;
+    color: #434455;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-textarea-field::placeholder {
+    /* font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16667;
+    letter-spacing: 0.04em; */
+    color: rgba(46, 47, 66, 0.4);
+}
+
+/* Обёртка для чекбокса и текста — выравнивание по горизонтали */
+.modal-policy {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+/* Скрытие стандартного HTML-чекбокса */
+.modal-check-input {
+    display: none;
+}
+
+/* Кастомный внешний вид чекбокса */
+.modal-check-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Скрываем галочку по умолчанию */
+.modal-check-box svg {
+    display: none;
+}
+
+/* При активации чекбокса (состояние checked) — меняем цвет и рамку */
+.modal-check-input:checked+.modal-check-box {
+    background-color: #404bbf;
+    border-color: #404bbf;
+    fill: #FFFFFF;
+}
+
+/* Показываем галочку, когда чекбокс активен */
+.modal-check-input:checked+.modal-check-box svg {
+    display: block;
+}
+
+/* Стиль метки — курсор в виде руки */
+.modal-label {
+    cursor: pointer;
+}
+
+/* Стиль ccылки на файл с договором */
+.modal-link {
+    line-height: 1.33333;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #4d5ae5;
 }
