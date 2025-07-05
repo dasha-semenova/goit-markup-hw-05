@@ -682,75 +682,76 @@
         <p class="modal-title">Leave your contacts and we will call you back</p>
 
         <form class="modal-content">
-          <div class="modal-content-all-inputs">
-            <div class="modal-input-content">
-              <label for="user-name-id" class="modal-label">Name</label>
-              <div class="modal-input">
-                <input
-                  type="text"
-                  name="user-name"
-                  id="user-name-id"
-                  class="modal-input-field"
-                />
-                <svg width="18" height="24" class="modal-input-icon">
-                  <use href="./images/icons.svg#icon-user-name"></use>
-                </svg>
-              </div>
-            </div>
-
-            <div class="modal-input-content">
-              <label for="user-tel-id" class="modal-label">Phone</label>
-              <div class="modal-input">
-                <input
-                  type="tel"
-                  name="user-tel"
-                  id="user-tel-id"
-                  class="modal-input-field"
-                />
-                <svg width="18" height="24" class="modal-input-icon">
-                  <use href="./images/icons.svg#icon-user-phone"></use>
-                </svg>
-              </div>
-            </div>
-
-            <div class="modal-input-content">
-              <label for="user-email-id" class="modal-label">Email</label>
-              <div class="modal-input">
-                <input
-                  type="email"
-                  name="user-email"
-                  id="user-email-id"
-                  class="modal-input-field"
-                />
-                <svg width="18" height="24" class="modal-input-icon">
-                  <use href="./images/icons.svg#icon-user-email"></use>
-                </svg>
-              </div>
-            </div>
-
-            <div class="modal-input-content">
-              <label for="comment-id" class="modal-label">Comment</label>
-              <textarea
-                name="comment"
-                id="comment-id"
-                placeholder="Text input"
-                class="modal-textarea-field"
-              ></textarea>
+          <div class="modal-input-content">
+            <label for="user-name" class="modal-label">Name</label>
+            <div class="modal-input">
+              <input
+                type="text"
+                name="user-name"
+                id="user-name"
+                class="modal-input-field"
+              />
+              <svg width="18" height="24" class="modal-input-icon">
+                <use href="./images/icons.svg#icon-user-name"></use>
+              </svg>
             </div>
           </div>
 
-          <label class="modal-policy">
+          <div class="modal-input-content">
+            <label for="user-tel" class="modal-label">Phone</label>
+            <div class="modal-input">
+              <input
+                type="tel"
+                name="user-tel"
+                id="user-tel"
+                class="modal-input-field"
+              />
+              <svg width="18" height="24" class="modal-input-icon">
+                <use href="./images/icons.svg#icon-user-phone"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="modal-input-content">
+            <label for="user-email" class="modal-label">Email</label>
+            <div class="modal-input">
+              <input
+                type="email"
+                name="user-email"
+                id="user-email"
+                class="modal-input-field"
+              />
+              <svg width="18" height="24" class="modal-input-icon">
+                <use href="./images/icons.svg#icon-user-email"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="modal-textarea-content">
+            <label for="user-comment" class="modal-label">Comment</label>
+            <textarea
+              name="user-comment"
+              id="user-comment"
+              placeholder="Text input"
+              class="modal-textarea-field"
+            ></textarea>
+          </div>
+
+          <div class="modal-policy">
             <input
               type="checkbox"
+              name="user-privacy"
+              id="user-privacy"
+              value="true"
               class="modal-check-input"
-              id="custom-check"
             />
-            <span class="modal-check-box">
-              <svg width="10" height="8">
-                <use href="./images/icons.svg#icon-checkbox"></use>
-              </svg>
-            </span>
-            <span class="modal-label">
+
+            <label for="user-privacy" class="modal-label">
+              <span class="modal-check-box">
+                <svg width="10" height="8" class="modal-check-box-icon">
+                  <use href="./images/icons.svg#icon-checkbox"></use>
+                </svg>
+              </span>
               I accept the terms and conditions of the
               <a
                 href="https://www.sitime.com/privacy-policy"
@@ -758,8 +759,8 @@
                 class="modal-link"
                 >Privacy Policy
               </a>
-            </span>
-          </label>
+            </label>
+          </div>
 
           <button type="button" class="button">Send</button>
         </form>

@@ -206,6 +206,17 @@ header - start */
 .button {
     padding: 0;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    border: none;
+    border-radius: 4px;
+    background-color: #4D5AE5;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    cursor: pointer;
 }
 
 .button:hover,
@@ -223,19 +234,6 @@ header - start */
     max-width: 496px;
 }
 
-.button {
-    display: block;
-    border: none;
-    border-radius: 4px;
-    background-color: #4D5AE5;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    color: #FFFFFF;
-    letter-spacing: 0.04em;
-    line-height: 1.5;
-    cursor: pointer;
-}
 .hero .button,
 .modal .button {
     min-width: 169px;
@@ -558,7 +556,7 @@ footer - start */
 
 .modal {
     position: absolute;
-    padding: 24px;
+    padding: 72px 24px 24px 24px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -576,6 +574,7 @@ footer - start */
 
 .modal-close-btn {
     position: absolute;
+    top:24px;
     right: 24px;
     border-radius: 50%;
     background-color: #e7e9fc;
@@ -583,13 +582,16 @@ footer - start */
     width: 24px;
     height: 24px;
     padding: 0;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn-icon {
     fill: #2e2f42;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-btn:hover,
@@ -610,7 +612,6 @@ footer - start */
     letter-spacing: 0.02em;
     text-align: center;
     color: #2e2f42;
-    margin-top: 48px;
     margin-bottom: 16px;
 }
 
@@ -627,39 +628,46 @@ footer - start */
 }
 
 .modal-label {
+    display: flex;
+    gap: 8px;
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
     margin-bottom: 4px;
+    cursor: pointer;
 }
 
 .modal-input-content {
     display: flex;
     flex-direction: column;
+    margin-bottom: 8px;
 }
 
-.modal-input-content
+.modal-textarea-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
 .modal-input {
-    position: relative;
-    width: 360px;
+    position: relative;    
 }
 
 .modal-input-field {
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    outline: none;
-    border-radius: 4px;
+    outline: transparent;
+    background-color: transparent;
     width: 100%;
     height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
     padding: 8px 16px 8px 38px;
-
     font-weight: 400;
     font-size: 12px;
     line-height: 1.16667;
     letter-spacing: 0.04em;
     color: #434455;
-
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -668,9 +676,9 @@ footer - start */
     width: 18px;
     height: 24px;
     left: 16px;
-    top: 8px;
+    top: 50%;
+    transform: translateY(-50%);
     fill: #2e2f42;
-
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -679,7 +687,6 @@ footer - start */
 .modal-textarea-field:hover,
 .modal-textarea-field:focus-visible {
     border-color: #4d5ae5;
-    outline: none;
 }
 
 .modal-input:hover .modal-input-icon,
@@ -693,45 +700,47 @@ footer - start */
 
 .modal-textarea-field {
     border: 1px solid rgba(46, 47, 66, 0.4);
-    outline: none;
+    background-color: transparent;
+    outline: transparent;
     border-radius: 4px;
+
     width: 100%;
     height: 120px;
     resize: none;
-    padding: 8px 16px 8px 16px;
+    padding: 8px 16px;
 
     font-weight: 400;
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
-    color: #434455;
+    color: rgba(46, 47, 66, 0.4);
 
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-textarea-field::placeholder {
-    /* font-weight: 400;
-    font-size: 12px;
-    line-height: 1.16667;
-    letter-spacing: 0.04em; */
     color: rgba(46, 47, 66, 0.4);
 }
 
 /* Обёртка для чекбокса и текста — выравнивание по горизонтали */
 .modal-policy {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
     margin-bottom: 24px;
 }
 
 /* Скрытие стандартного HTML-чекбокса */
+/* Скрываем галочку по умолчанию */
 .modal-check-input {
     display: none;
 }
 
+.modal-check-box-icon {
+    fill: transparent;
+    transition: fill 250mc cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Кастомный внешний вид чекбокса */
 .modal-check-box {
+    display: inline-flex;
     width: 16px;
     height: 16px;
     border-radius: 2px;
@@ -740,28 +749,22 @@ footer - start */
     align-items: center;
     justify-content: center;
     cursor: pointer;
-}
-
-/* Скрываем галочку по умолчанию */
-.modal-check-box svg {
-    display: none;
+    fill: transparent;
+    transition: 
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* При активации чекбокса (состояние checked) — меняем цвет и рамку */
-.modal-check-input:checked+.modal-check-box {
+.modal-check-input:checked + .modal-label .modal-check-box {
     background-color: #404bbf;
     border-color: #404bbf;
-    fill: #FFFFFF;
 }
 
 /* Показываем галочку, когда чекбокс активен */
-.modal-check-input:checked+.modal-check-box svg {
-    display: block;
-}
-
-/* Стиль метки — курсор в виде руки */
-.modal-label {
-    cursor: pointer;
+.modal-check-input:checked + .modal-label .modal-check-box-icon {
+    fill: #ffffff;
 }
 
 /* Стиль ccылки на файл с договором */
