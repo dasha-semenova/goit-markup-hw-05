@@ -620,6 +620,17 @@ footer - start */
 }
 
 .modal-label {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.modal-privacy-label {
     display: inline-flex;
     gap: 8px;
     font-weight: 400;
@@ -749,14 +760,14 @@ footer - start */
 }
 
 /* При активации чекбокса (состояние checked) — меняем цвет и рамку */
-.modal-check-input:checked + .modal-label .modal-check-box {
+.modal-check-input:checked + .modal-privacy-label .modal-check-box {
     background-color: #404bbf;
     border: none;
     fill: #F4F4FD;
 }
 
 /* Показываем галочку, когда чекбокс активен */
-.modal-check-input:checked + .modal-label .modal-check-box-icon {
+.modal-check-input:checked + .modal-privacy-label .modal-check-box-icon {
     fill: #ffffff;
 }
 
